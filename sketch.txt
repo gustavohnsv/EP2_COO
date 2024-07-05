@@ -1,0 +1,47 @@
+Mudanças feitas no código:
+removi o método particiona() do GeradorDeProdutos
+
+criei uma interface particiona.particionaStrategy
+criei 3 implementações da interfaca (particiona...)
+
+criei uma interface ordena.ordenaStrategy
+criei 4 implementações da interface (ordenaInsertion...)
+uma delas se beneficia de particiona.particionaStrategy (ordena.ordenaQuicksort)
+
+refatorei o método carregaProdutos() para ler um arquivo .csv se possível
+
+criei packages para cada funcionalidade do programa e encapsulei suas classes e interfaces
+o código principal está no pacote 'main'
+
+o vetor de produtos agora depende da interface Collection
+a aplicação escolhida para implementação foi a de 'List', utilizando 'ArrayList'
+
+modifiquei o método carregaProdutos para ler também 'negrito', 'italico' e 'cor'
+
+criei uma nova classe 'ProdutoAltetnativo' que extende 'ProdutoPadrao' e implementa 'Produto' para possuir campos necessários de negrito, italico e cor
+
+adicionei dois "enum", 'ORDEM_CRESC'e 'ORDEM_DECRESC' para a forma em que os elementos serão exibidos
+
+modifiquei a class GeradorDeRelatorios para possui novos campos personalizáveis
+
+adicionei uma lista temporária chamada ListOfProdutos em geraRelatorio() que será usada para exibição
+
+adicionei uma tag HTML na saida para indicar que o texto está codificado em UTF-8
+modifiquei também a maneira como o arquivo é lido para interpretar a codificação UTF-8
+
+especifiquei o comportamento de 'geraRelatorio' para saber trabalhar com 'ProdutoPadrao' e 'ProdutoAlternativo', a depender da implementação no código
+
+alterei as Strings referente ao algoritmo de ordenação pois estavam invertidas
+
+removi alguns valores redundantes como 'algoritmo', 'criterio', 'filtro' por ficarem redundantes
+
+adicionei tratativas de erros caso os argumentos fornecidos não estejam de acordo com os esperados
+
+modifiquei o método debug() para melhorar a visualização das mensagens
+
+criei uma função para fornecer ajuda sobre os argumentos do programa chamada printHelp()
+modifiquei printHelp() para fornecer ajuda sobre as novas funcionalidades
+
+[for dev]: adicionei um arquivo de saida chamado 'logs.txt' para verificar o diretorio do programa e se a leitura está correta
+
+[for dev]: criei um Makefile para ajudar na compilação. Pode usar 'make build' para gerar os arquivos .class ou 'make jar' para gerar um arquivo .jar
