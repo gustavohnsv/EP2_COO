@@ -32,15 +32,19 @@ run-example-jar:
 java-clean:
 	rm -rf $(OUT_DIR)
 
+# Limpar o arquivo 'logs.txt'
 log-clean:
 	rm -f logs.txt
 
+# Limpar arquivo.jar
 jar-clean:
 	rm -f *.jar
 
+# Limpar 'saida.html'
 html-clean:
 	rm -f *.html
 
+# Limpar todos os arquivos gerados após execução
 clean: java-clean log-clean jar-clean html-clean
 
 # Tarefa para gerar o arquivo .jar
@@ -50,6 +54,6 @@ jar: build
 # Tarefa para limpar e reconstruir o projeto
 rebuild: clean build
 
-# Comando para exibir a mensagem de ajuda no terminal
+# Exibir a mensagem de ajuda no terminal
 help: jar
 	java -jar $(JAR_FILE)
